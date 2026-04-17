@@ -17,40 +17,40 @@ web/                      # Home/Productos/Suscripciones en HTML para navegador
 tests/
 ```
 
-## ¿Qué tengo que hacer? Paso a paso para verlo en el navegador
+## ¿Qué tengo que hacer? Paso a paso para verlo en el navegador (estilo MAI-Natural)
 
 1. Estar en la raíz del proyecto:
    ```bash
    cd /workspace/Granja-GALU
    ```
-2. Levantar la app:
+2. Levantar la app web:
    ```bash
-   python run_app.py
+   npm run dev
    ```
 3. Abrir en navegador:
-   - Home: `http://127.0.0.1:8000/index.html`
-   - Productos: `http://127.0.0.1:8000/productos.html`
-   - Suscripciones: `http://127.0.0.1:8000/suscripciones.html`
+   - Home: `http://127.0.0.1:3000/`
+   - Productos: `http://127.0.0.1:3000/productos.html`
+   - Suscripciones: `http://127.0.0.1:3000/suscripciones.html`
 
 ### Comandos exactos (copiar/pegar)
 
 ```bash
 cd /workspace/Granja-GALU
-python run_app.py
+npm run dev
 ```
 
 Luego abre:
 
 ```text
-http://127.0.0.1:8000/index.html
+http://127.0.0.1:3000/
 ```
 
 Para detener el servidor: `Ctrl + C`.
 
-Opcional (si quieres otro puerto):
+Opcional (si quieres otro puerto/host):
 
 ```bash
-python run_app.py --port 8080
+HOST=0.0.0.0 PORT=8080 npm run dev
 ```
 
 ## Secciones ya modeladas
