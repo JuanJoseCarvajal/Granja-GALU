@@ -1,9 +1,9 @@
 export const categories = [
-  { id: 'huevos', theme: 'huevos', name: 'Huevos Mágicos', image: 'assets/huevos.svg', description: 'Cajas de 12 y 30 huevos de libre pastoreo.' },
-  { id: 'fresca', theme: 'fresca', name: 'A la Fresca', image: 'assets/fresca.svg', description: 'Mix de hojas, flores y verduras de temporada.' },
-  { id: 'pollos', theme: 'pollos', name: 'Pollos Mágicos', image: 'assets/pollo.svg', description: 'Pollo de crianza responsable y nutrición consciente.' },
-  { id: 'panes', theme: 'panes', name: 'Panes de masa madre', image: 'assets/pan.svg', description: 'Panes de fermentación lenta y artesanal.' },
-  { id: 'bebidas', theme: 'bebidas', name: 'Bebidas fermentadas', image: 'assets/bebida.svg', description: 'Bebidas vivas de temporada.' },
+  { id: 'huevos', name: 'Huevos Mágicos', image: 'assets/huevos.svg', description: 'Cajas de 12 y 30 huevos de libre pastoreo.' },
+  { id: 'fresca', name: 'A la Fresca', image: 'assets/fresca.svg', description: 'Mix de hojas, flores y verduras de temporada.' },
+  { id: 'pollos', name: 'Pollos Mágicos', image: 'assets/pollo.svg', description: 'Pollo de crianza responsable y nutrición consciente.' },
+  { id: 'panes', name: 'Panes de masa madre', image: 'assets/pan.svg', description: 'Panes de fermentación lenta y artesanal.' },
+  { id: 'bebidas', name: 'Bebidas fermentadas', image: 'assets/bebida.svg', description: 'Bebidas vivas de temporada.' },
 ];
 
 export const products = [

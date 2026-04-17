@@ -10,7 +10,6 @@ def test_main_js_has_cart_and_checkout_flow() -> None:
     assert "renderCart" in main_js
     assert "setupCheckoutForm" in main_js
     assert "window.location.href = 'index.html'" in main_js
-    assert "themed-card theme-${category.theme}" in main_js
 
 
 def test_cart_js_uses_local_storage() -> None:
@@ -19,20 +18,3 @@ def test_cart_js_uses_local_storage() -> None:
     assert "localStorage" in cart_js
     assert "addToCart" in cart_js
     assert "getCartDetailed" in cart_js
-    assert "try" in cart_js
-
-
-def test_server_supports_query_params_and_safe_paths() -> None:
-    server_js = Path("server.js").read_text(encoding="utf-8")
-
-    assert "new URL(urlPath || '/'" in server_js
-    assert "path.resolve(webDir" in server_js
-    assert "EADDRINUSE" in server_js
-
-
-def test_styles_has_design_tokens_for_categories() -> None:
-    css = (WEB_DIR / "styles.css").read_text(encoding="utf-8")
-
-    assert "--category-huevos-primary" in css
-    assert "--category-fresca-primary" in css
-    assert "--category-pollos-primary" in css

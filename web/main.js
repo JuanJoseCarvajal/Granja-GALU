@@ -6,7 +6,7 @@ function renderCategoryCards(containerId) {
   if (!container) return;
 
   container.innerHTML = categories.map((category) => `
-    <article class="card themed-card theme-${category.theme}">
+    <article class="card">
       <img src="${category.image}" alt="${category.name}" class="card-img"/>
       <h3>${category.name}</h3>
       <p>${category.description}</p>
@@ -20,16 +20,8 @@ function renderProductsGrid(containerId, filterCategory = null) {
   if (!container) return;
 
   const filtered = filterCategory ? products.filter((p) => p.category === filterCategory) : products;
-  if (!filtered.length) {
-    container.innerHTML = '<p>No hay productos para esta categoría por ahora.</p>';
-    return;
-  }
-
-  container.innerHTML = filtered.map((product) => {
-    const category = categories.find((cat) => cat.id === product.category);
-    const theme = category?.theme || 'default';
-    return `
-    <article class="card themed-card theme-${theme}">
+  container.innerHTML = filtered.map((product) => `
+    <article class="card">
       <img src="${product.image}" alt="${product.name}" class="card-img"/>
       <h3>${product.name}</h3>
       <p>${product.description}</p>
@@ -39,8 +31,7 @@ function renderProductsGrid(containerId, filterCategory = null) {
         <button class="btn" data-add-cart="${product.id}">Agregar al carrito</button>
       </div>
     </article>
-  `;
-  }).join('');
+  `).join('');
 
   container.querySelectorAll('[data-add-cart]').forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -55,7 +46,7 @@ function renderSubscriptions(containerId) {
   if (!container) return;
 
   container.innerHTML = subscriptions.map((plan) => `
-    <article class="card themed-card theme-fresca">
+    <article class="card">
       <img src="${plan.image}" alt="${plan.name}" class="card-img"/>
       <h3>${plan.name}</h3>
       <p class="price">${formatPrice(plan.price)}</p>
@@ -77,7 +68,7 @@ function renderProductDetail() {
   }
 
   container.innerHTML = `
-    <article class="detail themed-card theme-${product.category}">
+    <article class="detail">
       <img src="${product.image}" alt="${product.name}" class="detail-img"/>
       <div>
         <h2>${product.name}</h2>
@@ -99,7 +90,7 @@ function renderCart() {
   const totalEl = document.getElementById('cart-total');
   if (!container || !totalEl) return;
 
-  const items = getCartDetailed();
+  const items = getCartDetailed().filter((item) => item.product);
   if (!items.length) {
     container.innerHTML = '<p>Tu carrito está vacío.</p>';
     totalEl.textContent = formatPrice(0);
@@ -135,7 +126,7 @@ function setupCheckoutForm() {
   const summary = document.getElementById('checkout-summary');
   if (!form || !summary) return;
 
-  const items = getCartDetailed();
+  const items = getCartDetailed().filter((item) => item.product);
   const total = items.reduce((acc, item) => acc + item.subtotal, 0);
   summary.innerHTML = `
     <h3>Resumen de compra</h3>
@@ -143,17 +134,8 @@ function setupCheckoutForm() {
     <p>Total: ${formatPrice(total)}</p>
   `;
 
-  if (!items.length) {
-    summary.innerHTML += '<p>No tienes productos en el carrito.</p>';
-  }
-
   form.addEventListener('submit', (event) => {
     event.preventDefault();
-    if (!items.length) {
-      alert('Agrega productos al carrito antes de pagar.');
-      window.location.href = 'productos.html';
-      return;
-    }
     clearCart();
     alert('¡Pago simulado exitoso! Te contactaremos con la confirmación.');
     window.location.href = 'index.html';
