@@ -1,0 +1,19 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='700' height='700' viewBox='0 0 700 700'>
+  <defs>
+    <radialGradient id='yolk' cx='50%' cy='50%' r='50%'>
+      <stop offset='0%' stop-color='#ffd84c'/>
+      <stop offset='100%' stop-color='#ffb703'/>
+    </radialGradient>
+    <filter id='shadow' x='-20%' y='-20%' width='140%' height='140%'>
+      <feDropShadow dx='0' dy='8' stdDeviation='14' flood-color='#c27800' flood-opacity='.45'/>
+    </filter>
+  </defs>
+
+  <g filter='url(#shadow)'>
+    <path d='M353 77c37 0 63 33 87 52 29 22 73 33 98 66 27 36 27 84 35 129 7 42 24 84 13 126-12 45-50 76-83 106-31 27-61 57-101 71-39 13-81 1-122-2-44-2-90 5-128-18-41-25-58-73-84-112-25-39-62-74-67-120-5-49 30-92 44-138 14-46 10-102 43-137 35-37 92-38 139-58 41-17 79-65 126-65z' fill='#fff9ea'/>
+    <circle cx='360' cy='358' r='115' fill='url(#yolk)'/>
+  </g>
+
+  <path d='M146 180c56-70 183-56 211-55M170 533c88 59 208 39 298-15M536 196c61 61 67 157 55 221' stroke='#5f1b0e' stroke-width='8' fill='none' stroke-linecap='round' opacity='.25'/>
+  <text x='350' y='102' text-anchor='middle' font-family='Arial' font-size='55' fill='#5a1d0f' transform='rotate(14 350 102)'>Huevos de Gallinas libres de jaulas</text>
+</svg>

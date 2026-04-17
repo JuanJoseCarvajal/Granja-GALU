@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | Granja GALU</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="home">
+  <header class="site-header">
+    <h1>Granja GALU</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="categorias.html">Categorías</a>
+      <a href="productos.html">Productos</a>
+      <a href="carrito.html">Carrito</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-slide hero-eggs">
+      <div class="hero-slide-content">
+        <div class="hero-bullets">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        <div>
+          <p class="hero-label">La Granja</p>
+          <h2>Huevos Mágicos</h2>
+          <p>
+            Nuestros huevos son un tesoro para la nutrición: gallinas libres de jaulas, de pastoreo,
+            con alimentación basada en fermentos, brotes y vegetales ricos en D3.
+          </p>
+          <div class="actions">
+            <a class="btn btn-light" href="categorias.html">Quieres conocer más de nuestros huevos</a>
+            <a class="btn" href="productos.html?categoria=huevos">Comprar</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-slide-image">
+        <img src="assets/fried-egg.svg" alt="Huevo mágico de libre pastoreo" />
+      </div>
+      <img src="assets/huevos.svg" alt="" class="hero-decoration deco-left" />
+      <img src="assets/huevos.svg" alt="" class="hero-decoration deco-right" />
+      <a href="#home-sections" class="hero-scroll">↓</a>
+    </section>
+
+    <section id="home-sections" class="layout">
+      <h2>Secciones de productos</h2>
+      <div id="home-categories" class="grid"></div>
+    </section>
+
+    <section>
+      <div class="layout">
+      <h2>Nuestras suscripciones</h2>
+      <div id="home-subscriptions" class="grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
