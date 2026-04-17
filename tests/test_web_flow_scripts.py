@@ -18,11 +18,3 @@ def test_cart_js_uses_local_storage() -> None:
     assert "localStorage" in cart_js
     assert "addToCart" in cart_js
     assert "getCartDetailed" in cart_js
-    assert "try" in cart_js
-
-
-def test_server_supports_query_params_and_safe_paths() -> None:
-    server_js = Path("server.js").read_text(encoding="utf-8")
-
-    assert "new URL(urlPath || '/'" in server_js
-    assert "path.resolve(webDir" in server_js

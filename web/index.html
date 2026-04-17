@@ -6,35 +6,41 @@
   <title>Home | Granja GALU</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body data-page="home">
-  <header class="site-header">
+<body>
+  <header>
     <h1>Granja GALU</h1>
     <nav>
       <a href="index.html">Home</a>
-      <a href="categorias.html">Categorías</a>
       <a href="productos.html">Productos</a>
-      <a href="carrito.html">Carrito</a>
+      <a href="suscripciones.html">Suscripciones</a>
     </nav>
   </header>
+  <main>
+    <h2>Volviendo al origen</h2>
+    <p>Promovemos una vida saludable con alimentos naturales y producción consciente.</p>
 
-  <main class="layout">
-    <section class="hero">
-      <h2>Volviendo al origen</h2>
-      <p>Alimentos vivos, proceso consciente: Huevos Mágicos, A la Fresca, Pollos Mágicos, panes de masa madre y bebidas fermentadas.</p>
-      <a class="btn" href="categorias.html">Explorar categorías</a>
+    <section class="card">
+      <h3>Huevos Mágicos</h3>
+      <p>Gallinas de libre pastoreo con alimentación de fermentos, brotes, vegetales y semillas ricas en D3.</p>
+      <span class="badge">Caja de 12</span>
+      <span class="badge">Caja de 30</span>
+      <span class="badge">Libre pastoreo</span>
     </section>
 
-    <section>
-      <h2>Secciones de productos</h2>
-      <div id="home-categories" class="grid"></div>
+    <section class="card">
+      <h3>A la Fresca</h3>
+      <p>Mix de hojas frescas y flores, más verduras de temporada según disponibilidad.</p>
+      <span class="badge">Hojas vivas</span>
+      <span class="badge">Flores comestibles</span>
+      <span class="badge">Estacional</span>
     </section>
 
-    <section>
-      <h2>Nuestras suscripciones</h2>
-      <div id="home-subscriptions" class="grid"></div>
+    <section class="card">
+      <h3>Pollos Mágicos</h3>
+      <p>Pollos criados con bienestar animal, nutrición consciente y trazabilidad.</p>
+      <span class="badge">Crianza responsable</span>
+      <span class="badge">Producción natural</span>
     </section>
   </main>
-
-  <script type="module" src="main.js"></script>
 </body>
 </html>

@@ -4,14 +4,7 @@ const CART_KEY = 'granja_galu_cart';
 
 export function getCart() {
   const raw = localStorage.getItem(CART_KEY);
-  if (!raw) return [];
-
-  try {
-    const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? parsed : [];
-  } catch {
-    return [];
-  }
+  return raw ? JSON.parse(raw) : [];
 }
 
 export function saveCart(items) {
@@ -42,7 +35,7 @@ export function getCartDetailed() {
       product,
       subtotal: product ? product.price * item.qty : 0,
     };
-  }).filter((item) => item.product);
+  });
 }
 
 export function formatPrice(value) {

@@ -18,14 +18,9 @@ const mimeTypes = {
 };
 
 function resolvePath(urlPath) {
-  const parsed = new URL(urlPath || '/', `http://${host}:${port}`);
-  const pathname = parsed.pathname;
-  if (pathname === '/' || pathname === '') return path.join(webDir, 'index.html');
-  const normalized = path.normalize(pathname).replace(/^(\.\.(\/|\\|$))+/, '');
-  const absolute = path.resolve(webDir, `.${normalized}`);
-  const webRoot = path.resolve(webDir);
-  if (!absolute.startsWith(webRoot)) return path.join(webDir, 'index.html');
-  return absolute;
+  if (urlPath === '/' || urlPath === '') return path.join(webDir, 'index.html');
+  const safePath = path.normalize(urlPath).replace(/^\.\.(\/|\\|$)/, '');
+  return path.join(webDir, safePath);
 }
 
 const port = Number(process.env.PORT || 3000);
@@ -34,32 +29,22 @@ const host = process.env.HOST || '127.0.0.1';
 const server = http.createServer((req, res) => {
   const target = resolvePath(req.url || '/');
 
-  fs.stat(target, (statErr, stats) => {
-    if (statErr) {
+  fs.readFile(target, (err, content) => {
+    if (err) {
       res.statusCode = 404;
       res.setHeader('Content-Type', 'text/plain; charset=utf-8');
       res.end('Archivo no encontrado');
       return;
     }
 
-    const finalTarget = stats.isDirectory() ? path.join(target, 'index.html') : target;
-    fs.readFile(finalTarget, (err, content) => {
-      if (err) {
-        res.statusCode = 404;
-        res.setHeader('Content-Type', 'text/plain; charset=utf-8');
-        res.end('Archivo no encontrado');
-        return;
-      }
-
-      const ext = path.extname(finalTarget).toLowerCase();
-      res.statusCode = 200;
-      res.setHeader('Content-Type', mimeTypes[ext] || 'application/octet-stream');
-      res.end(content);
-    });
+    const ext = path.extname(target).toLowerCase();
+    res.statusCode = 200;
+    res.setHeader('Content-Type', mimeTypes[ext] || 'application/octet-stream');
+    res.end(content);
   });
 });
 
 server.listen(port, host, () => {
   console.log(`✅ MAI-Natural style app en http://${host}:${port}`);
-  console.log('Rutas: /, /categorias.html, /productos.html, /producto.html?id=hm-12, /carrito.html, /checkout.html, /suscripciones.html');
+  console.log('Rutas: /, /productos.html, /suscripciones.html');
 });
