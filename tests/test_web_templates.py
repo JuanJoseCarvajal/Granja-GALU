@@ -7,31 +7,24 @@ WEB_DIR = Path("web")
 def test_home_contains_requested_sections() -> None:
     home = (WEB_DIR / "index.html").read_text(encoding="utf-8")
 
-    assert "hero-slide hero-eggs" in home
     assert "Huevos Mágicos" in home
-    assert "assets/fried-egg.svg" in home
-    assert "Secciones de productos" in home
-    assert "home-categories" in home
-    assert "Nuestras suscripciones" in home
+    assert "A la Fresca" in home
+    assert "Pollos Mágicos" in home
 
 
-def test_flow_pages_exist() -> None:
-    assert (WEB_DIR / "categorias.html").exists()
-    assert (WEB_DIR / "producto.html").exists()
-    assert (WEB_DIR / "carrito.html").exists()
-    assert (WEB_DIR / "checkout.html").exists()
+def test_productos_contains_requested_categories() -> None:
+    productos = (WEB_DIR / "productos.html").read_text(encoding="utf-8")
+
+    assert "huevos_magicos" in productos
+    assert "a_la_fresca" in productos
+    assert "pollos_magicos" in productos
+    assert "panes_masa_madre" in productos
+    assert "bebidas_fermentadas" in productos
 
 
-def test_products_js_contains_categories_products_and_subscriptions() -> None:
-    products_js = (WEB_DIR / "products.js").read_text(encoding="utf-8")
+def test_suscripciones_contains_planes() -> None:
+    suscripciones = (WEB_DIR / "suscripciones.html").read_text(encoding="utf-8")
 
-    assert "Huevos Mágicos" in products_js
-    assert "A la Fresca" in products_js
-    assert "Pollos Mágicos" in products_js
-    assert "Panes de masa madre" in products_js
-    assert "Bebidas fermentadas" in products_js
-    assert "Suscripción Quincenal" in products_js
-
-
-def test_hero_image_asset_exists() -> None:
-    assert (WEB_DIR / "assets" / "fried-egg.svg").exists()
+    assert "Suscripción Huevos Mágicos" in suscripciones
+    assert "Suscripción A la Fresca" in suscripciones
+    assert "Suscripción Vida Saludable" in suscripciones

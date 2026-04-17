@@ -6,60 +6,41 @@
   <title>Home | Granja GALU</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body data-page="home">
-  <header class="site-header">
+<body>
+  <header>
     <h1>Granja GALU</h1>
     <nav>
       <a href="index.html">Home</a>
-      <a href="categorias.html">Categorías</a>
       <a href="productos.html">Productos</a>
-      <a href="carrito.html">Carrito</a>
+      <a href="suscripciones.html">Suscripciones</a>
     </nav>
   </header>
-
   <main>
-    <section class="hero-slide hero-eggs">
-      <div class="hero-slide-content">
-        <div class="hero-bullets">
-          <span class="dot active"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-        <div>
-          <p class="hero-label">La Granja</p>
-          <h2>Huevos Mágicos</h2>
-          <p>
-            Nuestros huevos son un tesoro para la nutrición: gallinas libres de jaulas, de pastoreo,
-            con alimentación basada en fermentos, brotes y vegetales ricos en D3.
-          </p>
-          <div class="actions">
-            <a class="btn btn-light" href="categorias.html">Quieres conocer más de nuestros huevos</a>
-            <a class="btn" href="productos.html?categoria=huevos">Comprar</a>
-          </div>
-        </div>
-      </div>
-      <div class="hero-slide-image">
-        <img src="assets/fried-egg.svg" alt="Huevo mágico de libre pastoreo" />
-      </div>
-      <img src="assets/huevos.svg" alt="" class="hero-decoration deco-left" />
-      <img src="assets/huevos.svg" alt="" class="hero-decoration deco-right" />
-      <a href="#home-sections" class="hero-scroll">↓</a>
+    <h2>Volviendo al origen</h2>
+    <p>Promovemos una vida saludable con alimentos naturales y producción consciente.</p>
+
+    <section class="card">
+      <h3>Huevos Mágicos</h3>
+      <p>Gallinas de libre pastoreo con alimentación de fermentos, brotes, vegetales y semillas ricas en D3.</p>
+      <span class="badge">Caja de 12</span>
+      <span class="badge">Caja de 30</span>
+      <span class="badge">Libre pastoreo</span>
     </section>
 
-    <section id="home-sections" class="layout">
-      <h2>Secciones de productos</h2>
-      <div id="home-categories" class="grid"></div>
+    <section class="card">
+      <h3>A la Fresca</h3>
+      <p>Mix de hojas frescas y flores, más verduras de temporada según disponibilidad.</p>
+      <span class="badge">Hojas vivas</span>
+      <span class="badge">Flores comestibles</span>
+      <span class="badge">Estacional</span>
     </section>
 
-    <section>
-      <div class="layout">
-      <h2>Nuestras suscripciones</h2>
-      <div id="home-subscriptions" class="grid"></div>
-      </div>
+    <section class="card">
+      <h3>Pollos Mágicos</h3>
+      <p>Pollos criados con bienestar animal, nutrición consciente y trazabilidad.</p>
+      <span class="badge">Crianza responsable</span>
+      <span class="badge">Producción natural</span>
     </section>
   </main>
-
-  <script type="module" src="main.js"></script>
 </body>
 </html>

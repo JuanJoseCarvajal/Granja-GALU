@@ -20,11 +20,6 @@ function renderProductsGrid(containerId, filterCategory = null) {
   if (!container) return;
 
   const filtered = filterCategory ? products.filter((p) => p.category === filterCategory) : products;
-  if (!filtered.length) {
-    container.innerHTML = '<p>No hay productos para esta categoría por ahora.</p>';
-    return;
-  }
-
   container.innerHTML = filtered.map((product) => `
     <article class="card">
       <img src="${product.image}" alt="${product.name}" class="card-img"/>
@@ -95,7 +90,7 @@ function renderCart() {
   const totalEl = document.getElementById('cart-total');
   if (!container || !totalEl) return;
 
-  const items = getCartDetailed();
+  const items = getCartDetailed().filter((item) => item.product);
   if (!items.length) {
     container.innerHTML = '<p>Tu carrito está vacío.</p>';
     totalEl.textContent = formatPrice(0);
@@ -131,7 +126,7 @@ function setupCheckoutForm() {
   const summary = document.getElementById('checkout-summary');
   if (!form || !summary) return;
 
-  const items = getCartDetailed();
+  const items = getCartDetailed().filter((item) => item.product);
   const total = items.reduce((acc, item) => acc + item.subtotal, 0);
   summary.innerHTML = `
     <h3>Resumen de compra</h3>
@@ -139,17 +134,8 @@ function setupCheckoutForm() {
     <p>Total: ${formatPrice(total)}</p>
   `;
 
-  if (!items.length) {
-    summary.innerHTML += '<p>No tienes productos en el carrito.</p>';
-  }
-
   form.addEventListener('submit', (event) => {
     event.preventDefault();
-    if (!items.length) {
-      alert('Agrega productos al carrito antes de pagar.');
-      window.location.href = 'productos.html';
-      return;
-    }
     clearCart();
     alert('¡Pago simulado exitoso! Te contactaremos con la confirmación.');
     window.location.href = 'index.html';
