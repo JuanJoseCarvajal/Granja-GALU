@@ -18,10 +18,8 @@ const mimeTypes = {
 };
 
 function resolvePath(urlPath) {
-  const parsed = new URL(urlPath || '/', `http://${host}:${port}`);
-  const pathname = parsed.pathname;
-  if (pathname === '/' || pathname === '') return path.join(webDir, 'index.html');
-  const safePath = path.normalize(pathname).replace(/^\.\.(\/|\\|$)/, '');
+  if (urlPath === '/' || urlPath === '') return path.join(webDir, 'index.html');
+  const safePath = path.normalize(urlPath).replace(/^\.\.(\/|\\|$)/, '');
   return path.join(webDir, safePath);
 }
 
