@@ -23,9 +23,9 @@ tests/
    ```bash
    cd /workspace/Granja-GALU
    ```
-2. Levantar servidor web estático:
+2. Levantar la app:
    ```bash
-   python -m http.server 8000 --directory web
+   python run_app.py
    ```
 3. Abrir en navegador:
    - Home: `http://127.0.0.1:8000/index.html`
@@ -36,7 +36,7 @@ tests/
 
 ```bash
 cd /workspace/Granja-GALU
-python -m http.server 8000 --directory web
+python run_app.py
 ```
 
 Luego abre:
@@ -46,6 +46,12 @@ http://127.0.0.1:8000/index.html
 ```
 
 Para detener el servidor: `Ctrl + C`.
+
+Opcional (si quieres otro puerto):
+
+```bash
+python run_app.py --port 8080
+```
 
 ## Secciones ya modeladas
 
