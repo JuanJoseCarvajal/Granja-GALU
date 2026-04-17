@@ -1,0 +1,8 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='800' height='500'>
+<rect width='100%' height='100%' fill='#fff5e9'/>
+<ellipse cx='400' cy='290' rx='260' ry='140' fill='#d78d4d'/>
+<ellipse cx='350' cy='290' rx='30' ry='60' fill='#f4c48f'/>
+<ellipse cx='420' cy='290' rx='30' ry='60' fill='#f4c48f'/>
+<ellipse cx='490' cy='290' rx='30' ry='60' fill='#f4c48f'/>
+<text x='35' y='70' font-family='Arial' font-size='54' fill='#5a2d0c'>Panes de Masa Madre</text>
+</svg>
