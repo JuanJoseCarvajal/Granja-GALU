@@ -1,0 +1,7 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='800' height='500'>
+<rect width='100%' height='100%' fill='#eaffd5'/>
+<circle cx='250' cy='260' r='120' fill='#8fd14f'/>
+<circle cx='400' cy='230' r='120' fill='#7ac943'/>
+<circle cx='530' cy='260' r='120' fill='#6cbf3f'/>
+<text x='40' y='70' font-family='Arial' font-size='54' fill='#174f2a'>A la Fresca</text>
+</svg>
