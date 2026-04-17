@@ -1,0 +1,7 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='800' height='500'>
+<rect width='100%' height='100%' fill='#fff7cc'/>
+<ellipse cx='220' cy='260' rx='90' ry='120' fill='#f8edd3' stroke='#8b5e3c' stroke-width='4'/>
+<ellipse cx='400' cy='250' rx='90' ry='120' fill='#f8edd3' stroke='#8b5e3c' stroke-width='4'/>
+<ellipse cx='580' cy='260' rx='90' ry='120' fill='#f8edd3' stroke='#8b5e3c' stroke-width='4'/>
+<text x='30' y='70' font-family='Arial' font-size='54' fill='#4a1d11'>Huevos Mágicos</text>
+</svg>

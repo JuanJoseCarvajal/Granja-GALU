@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout | Granja GALU</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="checkout">
+  <header class="site-header">
+    <h1>Flujo de pago</h1>
+    <nav>
+      <a href="carrito.html">Volver al carrito</a>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <main class="layout two-col">
+    <section id="checkout-summary" class="card"></section>
+
+    <form id="checkout-form" class="card form">
+      <h2>Datos de entrega</h2>
+      <label>Nombre completo<input required type="text" name="name" /></label>
+      <label>Correo<input required type="email" name="email" /></label>
+      <label>Dirección<input required type="text" name="address" /></label>
+      <label>Ciudad<input required type="text" name="city" /></label>
+      <label>Método de pago
+        <select name="payment" required>
+          <option value="transferencia">Transferencia</option>
+          <option value="tarjeta">Tarjeta</option>
+          <option value="contraentrega">Contra entrega</option>
+        </select>
+      </label>
+      <button class="btn" type="submit">Pagar ahora</button>
+    </form>
+  </main>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
